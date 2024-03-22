@@ -1,0 +1,25 @@
+<div *ngFor="let item of jobList; trackBy: trackByFn" class="row pt-4">
+  <div class="d-flex" >
+    <div class="col-lg-1">
+      <img appSpinnerLoad class="img-fluid border-0 bg-white" width="50px" height="50px" [src]="item['companyLogo']">
+    </div>
+    <div class="w-100 user-select" >
+      <a class="fs-5 fw-bold link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-black" [routerLink]="['/jobs/'+item.id]" >{{item['title']}}</a>
+      <p class="fw-light w-100">
+        <small class="w-50">
+          Company: {{item['companyName']}}
+        </small>
+        <small class="w-50">
+          Reference: {{item['reference']}}
+        </small>
+      </p>
+    </div>
+    <div class="w-auto">
+      <img *ngIf="fJobs[item.id] === undefined" src="../../../assets/fv.png" (click)="setFavoiriteJob(item)"
+        width="16px" height="16px" />
+      <img *ngIf="fJobs[item.id]" src="../../../assets/fv _active.png" (click)="setFavoiriteJob(item)" width="16px"
+        height="16px" />
+    </div>
+  </div>
+</div>
+

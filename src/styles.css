@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "../node_modules/mini.css/dist/mini-dark.min.css?v=1"; */
+/* body {
+  margin: 0;
+  color: var(--fore-color);
+  background: var(--secondary-fore-color)
+} */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+.btn.btn-light.active,
+.btn.btn-light:active {
+  color: #fff;
+  background-color: #101110;
+  border-color: #101110;
+  outline: none;
+  border-radius: 0;
+}
+
+.btn.btn-light:hover {
+  color: #fff;
+  background-color: #656865;
+  border-color: #656865;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.btn.btn-secondary {
+  color: #131212;
+  background-color: #d2d4d2;
+  border-color: #d2d4d2;
+  outline: none;
+  border-radius: 0;
+}
+
+.btn.btn-secondary:hover {
+  color: #131212;
+  background-color: #acafac;
+  border-color: #acafac;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+}
