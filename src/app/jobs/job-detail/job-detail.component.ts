@@ -15,7 +15,6 @@ import { SpinnerLoadDirective } from '../../directives/spinner-load.directive';
 export class JobDetailComponent {
   jobDetails?:Job;
   constructor(private route: ActivatedRoute, public jobService:JobService){
-      console.log(this.route)
 
   }
   ngOnInit() {
@@ -23,7 +22,6 @@ export class JobDetailComponent {
     this.jobService.getJobDataById(id)
     .subscribe((res:Job)=> {
       this.jobDetails = res;
-      console.log(this.jobDetails)
     });
   }
 }

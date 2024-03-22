@@ -19,7 +19,6 @@ export class FavouriteJobComponent {
 
   ngOnInit() {
     this.fJobs = JSON.parse(localStorage.getItem('fjobs') || '');
-    console.log('asdsad',this.fJobs)
   }
 
   getObjectKeys(obj: any): string[] {

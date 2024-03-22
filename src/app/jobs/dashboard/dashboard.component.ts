@@ -14,4 +14,11 @@ export class DashboardComponent {
   constructor(public jobService: JobService) {
 
   }
+
+  ngOnInit() {
+    let savedJob = localStorage.getItem('fjobs');
+    if (savedJob === null)
+      localStorage.setItem('fjobs', JSON.stringify({}));
+
+  }
 }

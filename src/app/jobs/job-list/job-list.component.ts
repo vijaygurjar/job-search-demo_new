@@ -22,7 +22,7 @@ export class JobListComponent {
   }
 
   ngOnInit(){
-    this.fJobs = JSON.parse(localStorage.getItem('fjobs') || '') || {};
+    this.fJobs = JSON.parse(localStorage.getItem('fjobs') || '');
     this.jobService.getJobsList()
     .subscribe((res:Jobs[])=>{
       this.jobList = res;
@@ -30,7 +30,8 @@ export class JobListComponent {
   }
 
   setFavoiriteJob(job:Job) {
-    this.fJobs = JSON.parse(localStorage.getItem('fjobs') || '') || {};
+    this.fJobs = JSON.parse(localStorage.getItem('fjobs') || '');
+
     if (this.fJobs[job.id] !== undefined) {
       delete this.fJobs[job.id];
     } else {
