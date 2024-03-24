@@ -12,7 +12,7 @@ import { JobService } from '../../services/job.service';
   styleUrl: './favourite-job.component.css'
 })
 export class FavouriteJobComponent {
-  fJobs?:Record<string, any>;
+  fJobs:undefined;
   constructor(private jobService:JobService) {
     this.jobService.lastActiveRoute = 'favourite';
   }
@@ -21,7 +21,8 @@ export class FavouriteJobComponent {
     this.fJobs = JSON.parse(localStorage.getItem('fjobs') || '');
   }
 
-  getObjectKeys(obj: any): string[] {
+  getObjectKeys(obj?: Record<string, string | number | [] | undefined>): string[] {
+    if (obj === undefined) obj = {};
     return Object.keys(obj);
   }
 }

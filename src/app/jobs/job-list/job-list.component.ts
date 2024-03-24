@@ -39,8 +39,4 @@ export class JobListComponent {
     }
     localStorage.setItem('fjobs', JSON.stringify(this.fJobs));
   }
-
-  trackByFn(index: number, item: Record<string, any>): number {
-    return index;
-  }
 }

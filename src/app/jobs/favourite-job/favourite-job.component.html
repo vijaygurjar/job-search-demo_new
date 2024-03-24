@@ -1,26 +1,29 @@
-<div *ngFor="let key of getObjectKeys(fJobs)" class="row pt-4">
-  <div class="d-flex" >
-    <div class="col-lg-1">
-      <img appSpinnerLoad class="img-fluid border-0 bg-white" width="50px" height="50px" [src]="fJobs![key]['companyLogo']">
-    </div>
-    <div class="w-100 user-select" >
-      <a class="fs-5 fw-bold link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-black" [routerLink]="['/jobs/'+fJobs![key].id]">{{fJobs![key]['title']}}</a>
-      <p class="fw-light w-100">
-        <small class="w-50">
-          Company: {{fJobs![key]['companyName']}}
-        </small>
-        <small class="w-50">
-          Reference: {{fJobs![key]['reference']}}
-        </small>
-      </p>
-    </div>
+<div class="col">
+  <div *ngFor="let key of fJobs | keyvalue" class="pt-4">
+    <div class="d-flex" >
+      <div class="col-lg-1">
+        <img appSpinnerLoad class="img-fluid border-0 bg-white" width="50px" height="50px" [src]="key['value'].companyLogo">
+      </div>
+      <div class="w-100 user-select" >
+        <a class="fs-5 fw-bold link-dark link-underline link-underline-opacity-0 link-underline-opacity-75-hover text-black" [routerLink]="['/jobs/'+key['value'].id]">{{key['value']['title']}}</a>
+        <p class="fw-light w-100">
+          <small class="w-50">
+            Company: {{key['value']['companyName']}}
+          </small>
+          <small class="w-50">
+            Reference: {{key['value']['reference']}}
+          </small>
+        </p>
+      </div>
 
+    </div>
+  </div>
+
+  <div *ngIf="getObjectKeys(fJobs).length === 0" class="text-center p-4">
+    <p>No favourite selected</p>
   </div>
 </div>
 
-<div *ngIf="getObjectKeys(fJobs).length === 0">
-  <label>No favourite selected</label>
-</div>
 
 
 
