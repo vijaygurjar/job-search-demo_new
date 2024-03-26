@@ -15,10 +15,7 @@
       </p>
     </div>
     <div class="w-auto">
-      <img *ngIf="fJobs[item.id] === undefined" src="../../../assets/fv.png" (click)="setFavoiriteJob(item)"
-        width="16px" height="16px" />
-      <img *ngIf="fJobs[item.id]" src="../../../assets/fv _active.png" (click)="setFavoiriteJob(item)" width="16px"
-        height="16px" />
+      <button class="icon-star" [ngClass]="{'active': fJobs[item.id] !== undefined }" (click)="setFavoiriteJob(item)" [attr.id]="'star-'+item.id" > </button>
     </div>
   </div>
 </div>

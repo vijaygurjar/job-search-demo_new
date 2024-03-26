@@ -16,8 +16,8 @@ import { SpinnerLoadDirective } from '../../directives/spinner-load.directive';
 export class JobListComponent {
 
   jobList?: Jobs[];
-  fJobs:Record<string, any> = {};
-  constructor(private jobService: JobService, private route: ActivatedRoute) {
+  fJobs:Record<string, Job> = {};
+  constructor(private jobService: JobService) {
     this.jobService.lastActiveRoute = 'joblist';
   }
 

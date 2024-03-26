@@ -1,0 +1,20 @@
+.icon-star {
+  background-image: url('../../../assets/fv.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  border: transparent;
+  background-color: transparent;
+}
+.icon-star.active,
+.icon-star:active
+{
+  background-image: url('../../../assets/fv_active.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+  border: transparent;
+  background-color: transparent;
+}
